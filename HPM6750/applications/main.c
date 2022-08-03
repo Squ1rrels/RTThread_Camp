@@ -163,7 +163,6 @@ void humiture_thread_entry(void *arg)
 void onenet_thread_entry(void *arg)
 {
     rt_thread_mdelay(10000);
-    rt_sem_t test_sem =RT_NULL;
     onenet_mqtt_init();
     while(1)
     {
@@ -256,7 +255,7 @@ void display_thread_entry(void *arg)
 //        itoa((rt_uint32_t),temp,10);
 //        itoa((rt_uint32_t)aht10_humi/10,humi,10);
 
-        oled_dispaly(date,hour,min,sec,temp,humi,location,weather,temperature);
+        oled_display(date,hour,min,sec,temp,humi,location,weather,temperature);
 
         rt_mutex_release(sync_mux);
 

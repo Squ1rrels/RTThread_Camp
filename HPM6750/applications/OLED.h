@@ -29,6 +29,6 @@
                                  strcmp(weather,"Heavy rain") && strcmp(weather,"Storm") && strcmp(weather,"Heavy storm") && \
                                  strcmp(weather,"Severe storm") && strcmp(weather,"Ice rain"))
 
-void oled_dispaly();
+void oled_display();
 
 #endif /* APPLICATIONS_OLED_H_ */

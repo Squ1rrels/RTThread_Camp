@@ -10,7 +10,7 @@
 #include "OLED.h"
 
 
-void oled_dispaly(char *date,char *hour,char *min,char *sec,char *temp,char *humi,char *location,char *weather,char *temperature)
+void oled_display(char *date,char *hour,char *min,char *sec,char *temp,char *humi,char *location,char *weather,char *temperature)
 {
     u8g2_t u8g2;
     // Initialization
@@ -93,4 +93,3 @@ void oled_dispaly(char *date,char *hour,char *min,char *sec,char *temp,char *hum
     u8g2_SendBuffer(&u8g2);
 
 }
-MSH_CMD_EXPORT(oled_dispaly, i2c ssd1306 software i2c sample);
