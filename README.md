@@ -34,9 +34,13 @@
 
   本次设计使用了HPM6750EVKMINI开发板，CPU为HPM6750，外部传感器使用AHT10采集环境温湿度，使用ESP8266连接室内WIFI获取时间与天气信息，然后通过SSD1306 OLED显示屏显示，此外采集到的温湿度信息也会通过WIFI网络上传到ONENET平台。
 
+  ![](./Hardware frame diagram.png)
+
 - ### 软件框架
 
   本次设计一共使用温湿度读取线程、RTC时间获取线程、天气获取线程、数据上传线程、OLED显示线程和一个互斥量用于RTC时间获取线程与OLED显示线程之间的同步(时间更新后及时显示)
+
+  ![](./Software frame diagram.png)
 
   ```c
   int main(void)
