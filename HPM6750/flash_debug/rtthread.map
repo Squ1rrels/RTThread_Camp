@@ -38583,7 +38583,7 @@ OUTPUT(rtthread.elf elf32-littleriscv)
  .debug_line_str
                 0x000000000000407c      0x140 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(_clzsi2.o)
 
-.debug_info     0x0000000000000000    0xa308b
+.debug_info     0x0000000000000000    0xa30a6
  .debug_info    0x0000000000000000       0x24 ./startup/HPM6750/toolchains/gcc/start.o
  .debug_info    0x0000000000000024      0x4da ./startup/HPM6750/startup.o
  .debug_info    0x00000000000004fe      0x627 ./startup/HPM6750/trap.o
@@ -38700,43 +38700,43 @@ OUTPUT(rtthread.elf elf32-littleriscv)
  .debug_info    0x00000000000908fd     0x531f ./board/board.o
  .debug_info    0x0000000000095c1c     0x22ea ./board/pinmux.o
  .debug_info    0x0000000000097f06     0x18d4 ./board/rtt_board.o
- .debug_info    0x00000000000997da      0xabd ./applications/OLED.o
- .debug_info    0x000000000009a297      0x812 ./applications/humiture.o
- .debug_info    0x000000000009aaa9     0x160d ./applications/main.o
- .debug_info    0x000000000009c0b6      0x359 ./applications/webclient_get.o
- .debug_info    0x000000000009c40f      0x793 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(_divdi3.o)
- .debug_info    0x000000000009cba2      0x7e4 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(_moddi3.o)
- .debug_info    0x000000000009d386      0x761 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(_udivdi3.o)
- .debug_info    0x000000000009dae7      0x7b5 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(_umoddi3.o)
- .debug_info    0x000000000009e29c      0x4fc e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(adddf3.o)
- .debug_info    0x000000000009e798      0x684 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(divdf3.o)
- .debug_info    0x000000000009ee1c      0x221 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(eqdf2.o)
- .debug_info    0x000000000009f03d      0x21e e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(gedf2.o)
- .debug_info    0x000000000009f25b      0x21e e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(ledf2.o)
- .debug_info    0x000000000009f479      0x6b6 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(muldf3.o)
- .debug_info    0x000000000009fb2f      0x4fc e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(subdf3.o)
- .debug_info    0x00000000000a002b      0x224 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(unorddf2.o)
- .debug_info    0x00000000000a024f      0x1ca e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(fixdfsi.o)
- .debug_info    0x00000000000a0419      0x1ad e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(fixunsdfsi.o)
- .debug_info    0x00000000000a05c6      0x268 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(floatsidf.o)
- .debug_info    0x00000000000a082e      0x25d e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(floatunsidf.o)
- .debug_info    0x00000000000a0a8b      0x1d8 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(fixdfdi.o)
- .debug_info    0x00000000000a0c63      0x2cd e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(floatdidf.o)
- .debug_info    0x00000000000a0f30      0x358 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(divsf3.o)
- .debug_info    0x00000000000a1288      0x1fc e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(gesf2.o)
- .debug_info    0x00000000000a1484      0x1fc e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(lesf2.o)
- .debug_info    0x00000000000a1680      0x34c e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(mulsf3.o)
- .debug_info    0x00000000000a19cc      0x2f0 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(subsf3.o)
- .debug_info    0x00000000000a1cbc      0x1b1 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(fixsfsi.o)
- .debug_info    0x00000000000a1e6d      0x19b e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(fixunssfsi.o)
- .debug_info    0x00000000000a2008      0x213 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(floatsisf.o)
- .debug_info    0x00000000000a221b      0x207 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(floatunsisf.o)
- .debug_info    0x00000000000a2422      0x26e e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(truncdfsf2.o)
- .debug_info    0x00000000000a2690      0x49f e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(trunctfdf2.o)
- .debug_info    0x00000000000a2b2f      0x1a1 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(_lshrdi3.o)
- .debug_info    0x00000000000a2cd0      0x1a1 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(_ashldi3.o)
- .debug_info    0x00000000000a2e71       0xd8 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(_clz.o)
- .debug_info    0x00000000000a2f49      0x142 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(_clzsi2.o)
+ .debug_info    0x00000000000997da      0xad8 ./applications/OLED.o
+ .debug_info    0x000000000009a2b2      0x812 ./applications/humiture.o
+ .debug_info    0x000000000009aac4     0x160d ./applications/main.o
+ .debug_info    0x000000000009c0d1      0x359 ./applications/webclient_get.o
+ .debug_info    0x000000000009c42a      0x793 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(_divdi3.o)
+ .debug_info    0x000000000009cbbd      0x7e4 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(_moddi3.o)
+ .debug_info    0x000000000009d3a1      0x761 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(_udivdi3.o)
+ .debug_info    0x000000000009db02      0x7b5 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(_umoddi3.o)
+ .debug_info    0x000000000009e2b7      0x4fc e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(adddf3.o)
+ .debug_info    0x000000000009e7b3      0x684 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(divdf3.o)
+ .debug_info    0x000000000009ee37      0x221 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(eqdf2.o)
+ .debug_info    0x000000000009f058      0x21e e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(gedf2.o)
+ .debug_info    0x000000000009f276      0x21e e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(ledf2.o)
+ .debug_info    0x000000000009f494      0x6b6 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(muldf3.o)
+ .debug_info    0x000000000009fb4a      0x4fc e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(subdf3.o)
+ .debug_info    0x00000000000a0046      0x224 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(unorddf2.o)
+ .debug_info    0x00000000000a026a      0x1ca e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(fixdfsi.o)
+ .debug_info    0x00000000000a0434      0x1ad e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(fixunsdfsi.o)
+ .debug_info    0x00000000000a05e1      0x268 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(floatsidf.o)
+ .debug_info    0x00000000000a0849      0x25d e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(floatunsidf.o)
+ .debug_info    0x00000000000a0aa6      0x1d8 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(fixdfdi.o)
+ .debug_info    0x00000000000a0c7e      0x2cd e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(floatdidf.o)
+ .debug_info    0x00000000000a0f4b      0x358 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(divsf3.o)
+ .debug_info    0x00000000000a12a3      0x1fc e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(gesf2.o)
+ .debug_info    0x00000000000a149f      0x1fc e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(lesf2.o)
+ .debug_info    0x00000000000a169b      0x34c e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(mulsf3.o)
+ .debug_info    0x00000000000a19e7      0x2f0 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(subsf3.o)
+ .debug_info    0x00000000000a1cd7      0x1b1 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(fixsfsi.o)
+ .debug_info    0x00000000000a1e88      0x19b e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(fixunssfsi.o)
+ .debug_info    0x00000000000a2023      0x213 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(floatsisf.o)
+ .debug_info    0x00000000000a2236      0x207 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(floatunsisf.o)
+ .debug_info    0x00000000000a243d      0x26e e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(truncdfsf2.o)
+ .debug_info    0x00000000000a26ab      0x49f e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(trunctfdf2.o)
+ .debug_info    0x00000000000a2b4a      0x1a1 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(_lshrdi3.o)
+ .debug_info    0x00000000000a2ceb      0x1a1 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(_ashldi3.o)
+ .debug_info    0x00000000000a2e8c       0xd8 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(_clz.o)
+ .debug_info    0x00000000000a2f64      0x142 e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/rv32imac/ilp32\libgcc.a(_clzsi2.o)
 
 .debug_abbrev   0x0000000000000000    0x146e9
  .debug_abbrev  0x0000000000000000       0x14 ./startup/HPM6750/toolchains/gcc/start.o
@@ -39433,7 +39433,7 @@ OUTPUT(rtthread.elf elf32-littleriscv)
  .debug_str     0x0000000000159492       0xda ./board/rtt_board.o
                                      0x126e32 (size before relaxing)
  .debug_str     0x000000000015956c      0x378 ./applications/OLED.o
-                                       0xfbc9 (size before relaxing)
+                                       0xfbd0 (size before relaxing)
  .debug_str     0x00000000001598e4       0x9c ./applications/humiture.o
                                      0x12322f (size before relaxing)
  .debug_str     0x0000000000159980      0x20b ./applications/main.o
@@ -43762,6 +43762,7 @@ strrchr                                           e:/rt-threadstudio/repo/extrac
                                                   ./packages/cJSON-latest/cJSON_Utils.o
                                                   ./rt-thread/components/dfs/src/dfs_file.o
 strstr                                            e:/rt-threadstudio/repo/extract/toolchain_support_packages/risc-v/risc-v-gcc/11.1.0/bin/../lib/gcc/riscv64-unknown-elf/11.1.0/../../../../riscv64-unknown-elf/lib/rv32imac/ilp32\libc_nano.a(lib_a-strstr.o)
+                                                  ./applications/OLED.o
                                                   ./packages/at_device-latest/class/esp8266/at_device_esp8266.o
                                                   ./packages/webclient-latest/src/webclient.o
                                                   ./rt-thread/components/finsh/msh_file.o

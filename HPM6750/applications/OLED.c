@@ -49,7 +49,7 @@ void oled_display(char *date,char *hour,char *min,char *sec,char *temp,char *hum
         u8g2_DrawGlyph(&u8g2, 0, 59, 0x00df );
         u8g2_SetFont(&u8g2, u8g2_font_ncenR08_tr);
         u8g2_DrawStr(&u8g2, 19, 62, weather);}
-    else if(check_overcast == 0){
+    else if(check_overcast != 0){
         u8g2_DrawGlyph(&u8g2, 0, 59, 0x007c );
         u8g2_SetFont(&u8g2, u8g2_font_timR08_tf);
         u8g2_DrawStr(&u8g2, 19, 62, "Overcast");}

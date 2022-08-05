@@ -20,7 +20,7 @@
 
 #define check_sunny             (strcmp(weather,"Sunny") && strcmp(weather,"Hot"))
 #define check_clear             (strcmp(weather,"Clear"))
-#define check_overcast          (strcmp(weather,"Overcast"))
+#define check_overcast          (strstr(weather,"Overcast"))
 #define check_thunder           (strcmp(weather,"Thundershower") && strcmp(weather,"Thundershower with hail"))
 #define check_cloudy            (strcmp(weather,"Cloudy") && strcmp(weather,"Partly cloudy") && strcmp(weather,"Mostly cloudy"))
 #define check_snowy             (strcmp(weather,"Sleet") && strcmp(weather,"Snow flurry") && strcmp(weather,"Light snow") && \
