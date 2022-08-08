@@ -87,9 +87,9 @@ I2C 和 SPI 一样以主从的方式工作，不同于 SPI 一主多从的结构
 int humiture_init(void)
 {
     struct rt_sensor_config cfg;
-    cfg.intf.dev_name  = AHT10_I2C_BUS;					//设置i2c接口
-    cfg.intf.user_data = (void *)AHT10_I2C_ADDR;		//设置i2c设备地址
-    rt_hw_aht10_init("aht10", &cfg);					//注册进sensor框架
+    cfg.intf.dev_name  = AHT10_I2C_BUS;						//设置i2c接口
+    cfg.intf.user_data = (void *)AHT10_I2C_ADDR;			//设置i2c设备地址
+    rt_hw_aht10_init("aht10", &cfg);						//注册进sensor框架
     return RT_EOK;
 }
 ```
@@ -182,8 +182,7 @@ rt_uint32_t temperature_get(void)
 
     while(_temp_dev == RT_NULL);
     if (rt_device_read(_temp_dev, 0, &data, 1) == 1)
-//        printf("temp:%3d.%d°C\r\n",data.data.temp / 10,(rt_uint32_t)data.data.temp % 10);
-        return (rt_uint32_t)data.data.temp;
+    	return (rt_uint32_t)data.data.temp;
 }
 
 rt_uint32_t humidity_get(void)
@@ -197,7 +196,6 @@ rt_uint32_t humidity_get(void)
 
     while(_humi_dev == RT_NULL);
     if (rt_device_read(_humi_dev, 0, &data, 1) == 1)
-//        printf("humi:%3d.%d%%\r\n", data.data.humi / 10,data.data.humi % 10);
         return (rt_uint32_t)data.data.humi;
 }
 ```
@@ -472,31 +470,31 @@ static int cJSON_NowWeatherParse(char *JSON)
     cJSON *json,*arrayItem,*object,*subobject,*item;
     int size;
     char *location,*weather,*temperature;
-    json = cJSON_Parse(JSON);//解析JSON数据包
-        if(json == NULL)          //检测JSON数据包是否存在语法上的错误，返回NULL表示数据包无效
+    json = cJSON_Parse(JSON);														//解析JSON数据包
+        if(json == NULL)          													//检测JSON数据包是否存在语法上的错误，返回NULL表示数据包无效
         {
-            rt_kprintf("Error before: [%s]\r\n",cJSON_GetErrorPtr()); //打印数据包语法错误的位置
+            rt_kprintf("Error before: [%s]\r\n",cJSON_GetErrorPtr()); 				//打印数据包语法错误的位置
             return -RT_ERROR;
         }
         else
         {
-            if((arrayItem = cJSON_GetObjectItem(json,"results")) != NULL); //匹配字符串"results",获取数组内容
+            if((arrayItem = cJSON_GetObjectItem(json,"results")) != NULL); 			//匹配字符串"results",获取数组内容
             {
-                size = cJSON_GetArraySize(arrayItem);     //获取数组中对象个数
+                size = cJSON_GetArraySize(arrayItem);     							//获取数组中对象个数
                 rt_kprintf("cJSON_GetArraySize: size=%d\n",size);
 
-                if((object = cJSON_GetArrayItem(arrayItem,0)) != NULL)//获取父对象内容
+                if((object = cJSON_GetArrayItem(arrayItem,0)) != NULL)				//获取父对象内容
                 {
                     if((subobject = cJSON_GetObjectItem(object,"location")) != NULL)
                     {
-                        if((item = cJSON_GetObjectItem(subobject,"name")) != NULL) //地名--需要用到的数据
+                        if((item = cJSON_GetObjectItem(subobject,"name")) != NULL) 	//地名--需要用到的数据
                         {
                             location = item->valuestring;
                         }
                     }
                     if((subobject = cJSON_GetObjectItem(object,"now")) != NULL)
                     {
-                        if((item = cJSON_GetObjectItem(subobject,"text")) != NULL)//天气预报文字--需要用到的数据
+                        if((item = cJSON_GetObjectItem(subobject,"text")) != NULL)	//天气预报文字--需要用到的数据
                         {
                             weather = item->valuestring;
 
@@ -715,13 +713,11 @@ void oled_display(char *date,char *hour,char *min,char *sec,char *temp,char *hum
     u8g2_DrawGlyph(&u8g2, 54, 63, 0x0036 );
     u8g2_SetFont(&u8g2, u8g2_font_ncenR08_tr);
     u8g2_DrawStr(&u8g2, 74, 57,  temp);
-//    u8g2_DrawStr(&u8g2, 84, 57,  "C");
 
     u8g2_SetFont(&u8g2, u8g2_font_open_iconic_thing_2x_t);
     u8g2_DrawGlyph(&u8g2, 93, 60, 0x0048 );
     u8g2_SetFont(&u8g2, u8g2_font_ncenR08_tr);
     u8g2_DrawStr(&u8g2, 110, 57, humi);
-//    u8g2_DrawStr(&u8g2, 120, 57,  "%");
 
     u8g2_SendBuffer(&u8g2);
 
@@ -887,20 +883,20 @@ int main(void)
       while(1)
       {
           buffer = webclient_get_weather();
-          json = cJSON_Parse(buffer);//解析JSON数据包
+          json = cJSON_Parse(buffer);													//解析JSON数据包
           web_free(buffer);
-          if(json == NULL)          //检测JSON数据包是否存在语法上的错误，返回NULL表示数据包无效
+          if(json == NULL)          													//检测JSON数据包是否存在语法上的错误，返回NULL表示数据包无效
           {
-              rt_kprintf("Error before: [%s]\r\n",cJSON_GetErrorPtr()); //打印数据包语法错误的位置
+              rt_kprintf("Error before: [%s]\r\n",cJSON_GetErrorPtr());				//打印数据包语法错误的位置
           }
           else
           {
-              if((arrayItem = cJSON_GetObjectItem(json,"results")) != NULL); //匹配字符串"results",获取数组内容
+              if((arrayItem = cJSON_GetObjectItem(json,"results")) != NULL); 			//匹配字符串"results",获取数组内容
               {
-                  size = cJSON_GetArraySize(arrayItem);     //获取数组中对象个数
+                  size = cJSON_GetArraySize(arrayItem);     							//获取数组中对象个数
                   rt_kprintf("cJSON_GetArraySize: size=%d\n",size);
   
-                  if((object = cJSON_GetArrayItem(arrayItem,0)) != NULL)//获取父对象内容
+                  if((object = cJSON_GetArrayItem(arrayItem,0)) != NULL)				//获取父对象内容
                   {
                       if((subobject = cJSON_GetObjectItem(object,"location")) != NULL)
                       {
@@ -911,7 +907,7 @@ int main(void)
                       }
                       if((subobject = cJSON_GetObjectItem(object,"now")) != NULL)
                       {
-                          if((item = cJSON_GetObjectItem(subobject,"text")) != NULL)//天气预报文字--需要用到的数据
+                          if((item = cJSON_GetObjectItem(subobject,"text")) != NULL)	//天气预报文字--需要用到的数据
                           {
                               strcpy(weather,item->valuestring);
   
@@ -947,22 +943,15 @@ int main(void)
   
           if(RTC_day < 10) sprintf(date,"%d %s %d  %s",RTC_year,RTC_mon,RTC_day,RTC_week);
           else sprintf(date,"%d %s %d %s",RTC_year,RTC_mon,RTC_day,RTC_week);
-  //        itoa(RTC_year,year,10);
-  //        itoa(RTC_day,day,10);
           if(RTC_hour < 10) sprintf(hour,"0%d",RTC_hour);
           else sprintf(hour,"%d",RTC_hour);
           if(RTC_min < 10) sprintf(min,"0%d",RTC_min);
           else sprintf(min,"%d",RTC_min);
           if(RTC_sec < 10) sprintf(sec,"0%d",RTC_sec);
           else sprintf(sec,"%d",RTC_sec);
-  //        itoa(RTC_hour,hour,10);
-  //        itoa(RTC_min,min,10);
-  //        itoa(RTC_sec,sec,10);
   
           sprintf(temp,"%dC",aht10_temp/10);
           sprintf(humi,"%d%%",aht10_humi/10);
-  //        itoa((rt_uint32_t),temp,10);
-  //        itoa((rt_uint32_t)aht10_humi/10,humi,10);
   
           oled_display(date,hour,min,sec,temp,humi,location,weather,temperature);
   

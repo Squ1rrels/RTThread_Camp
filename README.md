@@ -127,8 +127,7 @@
     
         while(_temp_dev == RT_NULL);
         if (rt_device_read(_temp_dev, 0, &data, 1) == 1)
-    //        printf("temp:%3d.%d°C\r\n",data.data.temp / 10,(rt_uint32_t)data.data.temp % 10);
-            return (rt_uint32_t)data.data.temp;
+        	return (rt_uint32_t)data.data.temp;
     }
     
     rt_uint32_t humidity_get(void)
@@ -142,11 +141,10 @@
     
         while(_humi_dev == RT_NULL);
         if (rt_device_read(_humi_dev, 0, &data, 1) == 1)
-    //        printf("humi:%3d.%d%%\r\n", data.data.humi / 10,data.data.humi % 10);
-            return (rt_uint32_t)data.data.humi;
+        	return (rt_uint32_t)data.data.humi;
     }
     ```
-
+    
   - ##### RTC时间获取线程
 
     该线程通过系统RTC功能获取当前的日期与时间信息，并将月份与星期匹配对应的英文缩写，同时while循环开始和结束分别获取和释放一个互斥量，实现与OLED显示线程之间的同步
@@ -178,7 +176,7 @@
         }
     }
     ```
-
+  
   - ##### 数据上传线程
 
     该线程利用ONENET软件包(MQTT协议)中提供的onenet_mqtt_init()与onenet_mqtt_upload_digit()初始化与发送数据到ONENET。
@@ -198,7 +196,7 @@
         }
     }
     ```
-
+  
   - ##### 天气获取线程
 
     webclient_get_weather()通过编写的天气获取函数通过知心天气API获取天气原始数据，其数据是JSON格式的，需通过解析JSON数据包，将其中的地点、天气和温度信息读取出来
@@ -213,36 +211,36 @@
         while(1)
         {
             buffer = webclient_get_weather();
-            json = cJSON_Parse(buffer);//解析JSON数据包
+            json = cJSON_Parse(buffer);				//解析JSON数据包
             web_free(buffer);
-            if(json == NULL)          //检测JSON数据包是否存在语法上的错误，返回NULL表示数据包无效
+            if(json == NULL)         				//检测JSON数据包是否存在语法上的错误，返回NULL表示数据包无效
             {
-                rt_kprintf("Error before: [%s]\r\n",cJSON_GetErrorPtr()); //打印数据包语法错误的位置
+                rt_kprintf("Error before: [%s]\r\n",cJSON_GetErrorPtr()); 																									//打印数据包语法错误的位置
             }
             else
             {
-                if((arrayItem = cJSON_GetObjectItem(json,"results")) != NULL); //匹配字符串"results",获取数组内容
+                if((arrayItem = cJSON_GetObjectItem(json,"results")) != NULL); 																								//匹配字符串"results",获取数组内容
                 {
-                    size = cJSON_GetArraySize(arrayItem);     //获取数组中对象个数
+                    size = cJSON_GetArraySize(arrayItem);     									//获取数组中对象个数
                     rt_kprintf("cJSON_GetArraySize: size=%d\n",size);
     
-                    if((object = cJSON_GetArrayItem(arrayItem,0)) != NULL)//获取父对象内容
+                    if((object = cJSON_GetArrayItem(arrayItem,0)) != NULL)						//获取父对象内容
                     {
                         if((subobject = cJSON_GetObjectItem(object,"location")) != NULL)
                         {
-                            if((item = cJSON_GetObjectItem(subobject,"name")) != NULL) //地名--需要用到的数据
+                            if((item = cJSON_GetObjectItem(subobject,"name")) != NULL) 			//地名--需要用到的数据
                             {
                                 strcpy(location,item->valuestring);
                             }
                         }
                         if((subobject = cJSON_GetObjectItem(object,"now")) != NULL)
                         {
-                            if((item = cJSON_GetObjectItem(subobject,"text")) != NULL)//天气预报文字--需要用到的数据
+                            if((item = cJSON_GetObjectItem(subobject,"text")) != NULL)			//天气预报文字--需要用到的数据
                             {
                                 strcpy(weather,item->valuestring);
     
                             }
-                            if((item = cJSON_GetObjectItem(subobject,"temperature")) != NULL) //温度--需要用到的数据
+                            if((item = cJSON_GetObjectItem(subobject,"temperature")) != NULL) 	//温度--需要用到的数据
                             {
                                 strcpy(temperature,item->valuestring);
                             }
@@ -251,12 +249,12 @@
                     }
                 }
             }
-            cJSON_Delete(json); //释放cJSON_Parse()分配出来的内存空间
+            cJSON_Delete(json);//释放cJSON_Parse()分配出来的内存空间
             rt_thread_mdelay(300000);
         }
     }
     ```
-
+  
   - ##### OLED显示线程
 
     在线程中将其他线程读取到的温湿度、天气、日期、时间等数据通过sprintf函数转换成字符串，最后通过编写的OLED_display()函数调用u8g2软件包中的相关API将数据通过SSD1306 OLED显示出来
@@ -273,22 +271,16 @@
     
             if(RTC_day < 10) sprintf(date,"%d %s %d  %s",RTC_year,RTC_mon,RTC_day,RTC_week);
             else sprintf(date,"%d %s %d %s",RTC_year,RTC_mon,RTC_day,RTC_week);
-    //        itoa(RTC_year,year,10);
-    //        itoa(RTC_day,day,10);
+    
             if(RTC_hour < 10) sprintf(hour,"0%d",RTC_hour);
             else sprintf(hour,"%d",RTC_hour);
             if(RTC_min < 10) sprintf(min,"0%d",RTC_min);
             else sprintf(min,"%d",RTC_min);
             if(RTC_sec < 10) sprintf(sec,"0%d",RTC_sec);
             else sprintf(sec,"%d",RTC_sec);
-    //        itoa(RTC_hour,hour,10);
-    //        itoa(RTC_min,min,10);
-    //        itoa(RTC_sec,sec,10);
     
             sprintf(temp,"%dC",aht10_temp/10);
             sprintf(humi,"%d%%",aht10_humi/10);
-    //        itoa((rt_uint32_t),temp,10);
-    //        itoa((rt_uint32_t)aht10_humi/10,humi,10);
     
             oled_display(date,hour,min,sec,temp,humi,location,weather,temperature);
     
@@ -298,7 +290,7 @@
         }
     }
     ```
-
+  
 - ### 完整作品图片
 
   ![](./Figure/成品图.png)
