@@ -968,13 +968,34 @@ int main(void)
 
 知心天气API的链接官方提供的是https协议的，使用WebClient没法正常访问，将链接开头的https改为http变为http协议后即可正常访问获取天气数据
 
-![](./images/踩坑5.png)
+![](./images/踩坑1.png)
 
 ##### Case2：
 
 在OLED显示时，有许多数字需要转成字符串才能正常的显示，一开始使用itoa()函数将数字转成字符串，但该函数一次只能转一个数字，而且不能将数字与其他字符串拼接在一起，这对UI的设计和排版有较大的影响，后来采用了sprintf()实现数字转字符串，该函数可以像使用printf函数一样，通过占位符的方式一次转多个数字，并且还可将数字与字符串拼接在一起，方便后续显示
 
-![](./images/踩坑1.png)
+```c
+		if(RTC_day < 10) sprintf(date,"%d %s %d  %s",RTC_year,RTC_mon,RTC_day,RTC_week);
+        else sprintf(date,"%d %s %d %s",RTC_year,RTC_mon,RTC_day,RTC_week);
+//        itoa(RTC_year,year,10);
+//        itoa(RTC_day,day,10);
+        if(RTC_hour < 10) sprintf(hour,"0%d",RTC_hour);
+        else sprintf(hour,"%d",RTC_hour);
+        if(RTC_min < 10) sprintf(min,"0%d",RTC_min);
+        else sprintf(min,"%d",RTC_min);
+        if(RTC_sec < 10) sprintf(sec,"0%d",RTC_sec);
+        else sprintf(sec,"%d",RTC_sec);
+//        itoa(RTC_hour,hour,10);
+//        itoa(RTC_min,min,10);
+//        itoa(RTC_sec,sec,10);
+
+        sprintf(temp,"%dC",aht10_temp/10);
+        sprintf(humi,"%d%%",aht10_humi/10);
+//        itoa((rt_uint32_t),temp,10);
+//        itoa((rt_uint32_t)aht10_humi/10,humi,10);
+```
+
+
 
 ##### Case3：
 
@@ -994,26 +1015,26 @@ int main(void)
 
 经过检查后onenet_mqtt_upload_digit()是能输入double类型的数据，按道理肯定是能够上传浮点数的，一开始以为时数据类型的问题，使用强制类型转换吧要上传的数据强制为double类型，但发现上传时终端会直接报错
 
-![](./images/踩坑6.png)
+![](./images/踩坑5.png)
 
 在RTThread社区也找到有帖子反应这一问题，但是几个回到也没有给出解决办法
 
-![](./images/踩坑7.png)
+![](./images/踩坑6.png)
 
 之后通过反复的debug发现JSON数据在这处理出了问题，浮点数的情况这里返回的值会变成乱码
 
-![](./images/踩坑8.png)
+![](./images/踩坑7.png)
 
-![](./images/踩坑9.png)
+![](./images/踩坑8.png)
 
 其中cJSON_PrintUnformatted()源码见下图
 
-![](./images/踩坑10.png)
+![](./images/踩坑9.png)
 
 后发现时默认情况下printf不能输出浮点数，所以才会导致解析JSON数据包时乱码进而报错
 
 进入设置开启Use float with nano printf后即可使printf能够输出浮点数，从而解决该问题
 
-![](./images/踩坑11.png)
+![](./images/踩坑10.png)
 
 ## 6、完结撒花
