@@ -1,5 +1,7 @@
 # RT-Thread 桌面时钟设计
 
+**bilibili视频连接：https://www.bilibili.com/video/BV1fG4y1h7ij**
+
 ![](./images/流程总图.png)
 
 ## 1、项目介绍
